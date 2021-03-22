@@ -1,0 +1,37 @@
+/* 
+/* 
+/*  custom.css
+/*
+/*  If not using Gulp and Sass, add your custom CSS below then include it
+/*  in your page by adding a reference to assets/css/custom.css in the head of each page.
+/*
+*/
+.ribbontail {
+  position: absolute;
+  top: -6px;
+  right: 15px;
+}
+
+.ribbontail:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 10px solid #cc0000;
+}
+
+.ribbon {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+  background: #cc0000;
+  font-size: 14px;
+  line-height: 1;
+  padding: 12px 8px 6px;
+  width: 100px;
+  text-transform: uppercase
+}
