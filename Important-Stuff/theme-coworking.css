@@ -8319,7 +8319,7 @@ svg.bg-primary * {
   fill: #1B4079; }
 
 svg.bg-primary-alt * {
-  fill: #f1f4f7; }
+  fill: #7c8085; }
 
 svg.bg-secondary * {
   fill: #6c757d; }
@@ -8686,7 +8686,7 @@ section {
   box-shadow: 0.5rem 0.5rem 0 rgba(233, 236, 239, 0.5); }
 
 .bg-primary-alt {
-  background: #f1f4f7; }
+  background: #7c8085; }
 
 .bg-primary-2-alt {
   background: #f1f9f6; }
