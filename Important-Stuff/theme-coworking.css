@@ -258,6 +258,7 @@ fieldset {
   padding: 0;
   margin: 0;
   border: 0; }
+  
 
 legend {
   display: block;
@@ -326,7 +327,7 @@ h5, .h5 {
 
 h6, .h6 {
   font-size: 1rem; }
-
+  
 .lead {
   font-size: 1.25rem;
   font-weight: 400; }
@@ -449,7 +450,7 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container {
+  .container {
   width: 100%;
   padding-right: 12px;
   padding-left: 12px;
@@ -7657,7 +7658,7 @@ a.text-primary-2:hover, a.text-primary-2:focus {
   color: #0f523e !important; }
 
 .text-primary-3 {
-  color: #071821 !important; }
+  color: #1B4079 !important; }
 
 a.text-primary-3:hover, a.text-primary-3:focus {
   color: black !important; }
@@ -11477,8 +11478,8 @@ https://flickity.metafizzy.co
     fill: #fff; }
 
 .hover-bg-primary-2:hover {
-  background: #1A936F;
-  border-color: #1A936F;
+  background: #1B4079;
+  border-color: #1B4079;
   color: #fff; }
   .hover-bg-primary-2:hover h1, .hover-bg-primary-2:hover h2, .hover-bg-primary-2:hover h3, .hover-bg-primary-2:hover h5, .hover-bg-primary-2:hover h6, .hover-bg-primary-2:hover h5, .hover-bg-primary-2:hover .h1, .hover-bg-primary-2:hover .h2, .hover-bg-primary-2:hover .h3, .hover-bg-primary-2:hover .h4, .hover-bg-primary-2:hover .h5, .hover-bg-primary-2:hover .h6 {
     color: #fff; }
