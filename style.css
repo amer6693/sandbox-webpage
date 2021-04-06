@@ -69,7 +69,7 @@ body {
   top: 20px;
   left: -75px;
   display: none;
-  transition: all 0.1s ease-out;
+  transition: all 0.3s ease-in-out;
 }
 .circle.hover:before, .circle.active:before {
   display: block;
@@ -82,13 +82,13 @@ body {
 }
 
 #mainCont {
-  height: 80%;
+  height: 100%;
   width: 100%;
   position: relative;
   color: black;
   font-size: 62px;
   text-align: center;
-  transition: all 0.2s ease-out;
+  transition: all 0.5s ease-out;
 }
 #mainCont span {
   display: inline-block;
@@ -96,7 +96,7 @@ body {
   height: 100%;
   position: absolute;
   top: 30%;
-  transition: all 0.2s ease-out;
+  transition: all 0.5s ease-out;
 }
 #mainCont span.right {
   left: 200%;

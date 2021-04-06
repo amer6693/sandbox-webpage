@@ -2,6 +2,109 @@
 <html lang="en">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
+  <style>
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #edf2f7;
+}
+
+ul {
+  list-style: none;
+  padding: 10px;
+}
+li {
+  position: relative;
+  font-size: normal;
+  padding-left: 1.5em;  /* space to preserve indentation on wrap */
+}
+.myths li:before {
+  content: '';  /* placeholder for the SVG */
+  position: absolute;
+  left: 0;  /* place the SVG at the start of the padding */
+  width: 2em;
+  height: 2em;
+  background: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='utf-8'?><svg width='18' height='18' viewBox='0 0 1792 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z'/></svg>") no-repeat;
+}
+.triangle li:before {
+  content: '';  /* placeholder for the SVG */
+  position: absolute;
+  left: 0;  /* place the SVG at the start of the padding */
+  width: 2em;
+  height: 2em;
+  background: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='utf-8'?><svg width='18' height='18' fill='black' viewBox='0 0 1792 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1152 896q0 26-19 45l-448 448q-19 19-45 19t-45-19-19-45v-896q0-26 19-45t45-19 45 19l448 448q19 19 19 45z'/></svg>") no-repeat;
+}
+.triangle-2 li:before {
+  content: '';  /* placeholder for the SVG */
+  position: absolute;
+  left: 20;  /* place the SVG at the start of the padding */
+  width: 2em;
+  height: 2em;
+  background: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='utf-8'?><svg width='18' height='18' fill='lightseagreen' viewBox='0 0 1792 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1152 896q0 26-19 45l-448 448q-19 19-45 19t-45-19-19-45v-896q0-26 19-45t45-19 45 19l448 448q19 19 19 45z'/></svg>") no-repeat;
+}
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  border-radius: 25px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #e99a33;
+  color: white;
+  border-radius: 25px;
+  transform: rotateY(180deg);
+}
+  </style>
     <meta charset="utf-8">
     <title>Sandbox Guidance</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +115,6 @@
     <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="preload" as="font" href="fonts/Inter-UI-upright.var.woff2" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="fonts/Inter-UI.var.woff2" type="font/woff2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="style.css">
   </head>
   <!doctype html>
 
@@ -105,44 +206,80 @@
 <!-- MAIN BODY -->
 
 
-<section class="bg-primary-alt py-10">
+<section class="bg-primary-alt py-5">
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="row">
-            <h2 class="mx-lg-8">Overview of Sandbox Application Process</h2>
-            <p style="color: red;">[to fix this section]</p>
+            <h2 class="mx-5">Overview of Sandbox Application Process</h2>
           </div>
         </div>
       </div>
-      <br></br>
-      <!-- partial:index.partial.html -->
-      <div class="container">
-      <div id="lineCont"> 
-        <div id="line"></div>
-        <div id="span">Sandbox Application Process</div>
+            
+
+    <div class="row justify-content-center">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h4>Pre application</h4>
+          </div>
+          <div class="flip-card-back">
+            <h5>What should you do before applying to the Sandbox</h5>
+          </div>
+        </div>
       </div>
-      <div id="mainCont">
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h4>Stage 1: Application</h4>
+          </div>
+          <div class="flip-card-back">
+            <h5>How do I apply to the Sandbox, and what response can I expect?​</h5>
+          </div>
+        </div>
       </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h4>Stage 2: Preparation</h4>
+          </div>
+          <div class="flip-card-back">
+            <h5>How should I prepare for live-testing?​</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h4>Stage 3: Live-testing</h4>
+          </div>
+          <div class="flip-card-back">
+            <h5>What to expect during live-testing?​</h5>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <br></br>
-    <br></br>
-    <br></br>
+      
 </section>
-
-
-
-
     
 <!--PRE APPLICATION SECTION-->
-<section class="bg-primary-alt pt-0 pb-4">
+<section class="bg-primary pt-0 pb-4">
+  <div class="divider bg-primary-alt py-0">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="96px" viewBox="0 0 100 100" version="1.1" preserveAspectRatio="none" class="injected-svg bg-primary" data-src="images/dividers/divider-3.svg">
+ <path d="M0,0 C6.83050094,50 15.1638343,75 25,75 C41.4957514,75 62.4956597,0 81.2456597,0 C93.7456597,0 99.9971065,0 100,0 L100,100 L0,100"></path>
+</svg>
+ </div> 
   
   <div class="row mx-1 justify-content-center">
     <div class="col-12 col-md-12 col-lg-8">
 <!-- FAQ LIST - PLS NUMBER THE FAQ IN DATATARGET AND ARIACONTROL AND ID -->
 <br>
 <br>
-<h3 style="text-align: left; color: black;">Pre-application - <i>What should i do before applying to the Sandbox?</i></h3><br>
-<p style="text-align: left;color: black;">Applicants who are interested to participate in the Bank’s Regulatory Sandbox are responsible to adequately demonstrate eligibility in
+<h3 style="text-align: left; color: white;">Pre-application - <i>What should i do before applying to the Sandbox?</i></h3><br>
+<p style="text-align: left;color: white;">Applicants who are interested to participate in the Bank’s Regulatory Sandbox are responsible to adequately demonstrate eligibility in
   accordance with the criteria specified under Section 5 of the Bank’s Regulatory Sandbox Framework. As a simple guidance, an
   applicant should minimally achieve the following:</p><br>
 
@@ -158,7 +295,7 @@
       <div class="pt-3" style="text-align: left;">
         <p class="mb-0" style="text-align: left;">
           Prior to sending in an application, please do assess the following criteria.<br></br>
-          <ul>
+          <ul class="triangle">
             <li>The Bank’s Regulatory Sandbox is intended as an avenue for the Bank to consider granting regulatory flexibilities to facilitate the growth of innovative financial services with genuine value proposition that may otherwise be impeded from doing so due to regulations. As such, it is a necessary condition that regulatory impediments are identified clearly to be eligible for the Bank’s Regulatory Sandbox. Conversely, if a proposed solution is not under the Bank’s regulatory purview or the applicant is able to fully comply with existing regulations, it would be ineligible.<br></br>
             <li>Applicants are responsible to comprehensively assess the potential legal implications of the services they intend to offer vis-à-vis regulations administered by the Bank or other regulators such as the Securities Commission (“SC”). It is common practice to engage an appropriate legal consultant to conduct such an assessment where an applicant is not well positioned to do so. Additionally, applicants in need of guidance or broad advice concerning legal and compliance matters may also consider engaging MDEC’s Fintech Booster programme.</li>
             </li>
@@ -177,9 +314,9 @@
             <div class="collapse" id="faq-3">
               <div class="pt-3" style="text-align: left;">
                 <p class="mb-0">
-                  <ul>
+                  <ul class="triangle">
                     <li>The Bank’s Regulatory Sandbox aims to enable innovative solutions to be deployed and tested in a live environment, within specified parameters and timeframes. As such, an applicant is expected to be minimally at the mid-stage of a start-up’s development phase at the time of application to the Bank’s Regulatory Sandbox. Typically, this would include:</li>          
-                    <ul>
+                    <ul class="triangle-2">
                       <li>A ready prototype or minimum viable product to demonstrate the proposed solution</li>
                     <li>Reasonably adequate resources (e.g. financial and staff capacity) to support live testing</li>
                   <li>Appropriate risk assessments and risk mitigation plans</li>
@@ -201,7 +338,7 @@
             <div class="collapse" id="faq-4">
               <div class="pt-3" style="text-align: left;">
                 <p class="mb-0">
-                  <ul>
+                  <ul class="triangle">
                     <li>Applicants should provide strong evidence to demonstrate a solution’s usefulness, functionality, and potential to improve financial services and satisfy market demand gaps, as stipulated in the Bank’s Regulatory Sandbox Framework and application form. Typically, it would entail a strong market gap assessment or research accompanied with a solid underlying understanding of the relevant market landscape and accurate identification of issues currently in the market.</li>
                   </ul>
                 </p>
@@ -230,140 +367,265 @@
   </section>
 
  <!-- DETAILED DESCRIPTION OF STEPS-->
-    <section class="bg-primary py-0">
-      <div class="divider bg-primary-alt py-0">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="96px" viewBox="0 0 100 100" version="1.1" preserveAspectRatio="none" class="injected-svg bg-primary" data-src="images/dividers/divider-3.svg">
-     <path d="M0,0 C6.83050094,50 15.1638343,75 25,75 C41.4957514,75 62.4956597,0 81.2456597,0 C93.7456597,0 99.9971065,0 100,0 L100,100 L0,100"></path>
-</svg>
-     </div>    
+    <section class="bg-primary-alt py-0">
+   
       <div class="container py-4 ">
         <div class="row  justify-content-center ">
           <div class="col-11 mb-3 text-light">
-            <h3 class="h3" style="text-align: center;">Journey in The Sandbox </h3>
-            <p style="color: yellow;">[to include pics for each placeholder]</p>
+            <h3 class="h3" style="text-align: center; color: black;">Journey in The Sandbox </h3>
           </div>
 
-          <div class="col-11">
-            <div class="card card-body ">
-              <div class="flex-grow-1">                
-                <h5 class="h5"><b>Stage 1: Application - </b> <i>How do I apply to the Sandbox, and what response can I expect?</i></h5>
-                <p class="mb-0" style="text-align: left;">
-                  <ul>
+          <div class="card" style="flex-wrap: wrap; align-items: center;">
+            <div class="row g-0">
+              <div class="col-md-3">
+                <img src="https://www.urban-hub.com/wp/wp-content/uploads/2018/04/Lasecity_1920X8642.png" class="card-img" alt="card-img" height="100%" style="align-self: center;" >
+              </div>
+              <div class="col-md-9">
+                <div class="card-body">
+                  <h5 class="card-title">Stage 1: Application - <i>How do I apply to the Sandbox, and what response can I expect?</i></h5>
+                  <p class="card-text">                  
+                    <ul class="triangle">
                     <li>Applicants should submit a completed application form (hyperlink) with relevant supporting documentation, to <a href="mailto:fintech@bnm.gov.my">fintech@bnm.gov.my</a></li>
                     <li>You should expect to receive an acknowledgment of your application within 1-3 working days.</li>
                     <li>Your application will be assessed against the eligibility criteria specified under section 5 of <a href="https://www.bnm.gov.my/documents/20124/761691/pd_regulatorysandboxframework_Oct2016.pdf">the Regulatory Sandbox Framework</a>. This would typically involve several discussions to better understand your proposed business model.</li>
                     <li>A decision on your application will be provided within 15 working days from the date at which complete information is submitted to the Bank.</li>
                   </ul></p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-11 ">
-            <div class="card card-body ">
-              <div class="flex-grow-1">
-                <h5 class="h5"> Stage 2: Preparation - <i>How should I prepare for testing?</i></h5>
-                <p class="mb-0" style="text-align: left;">
-                  <ul>
-                    <li>Eligible applicants who are admitted into the Sandbox will work with the Bank to prepare for live-testing. This will involve detailed discussions on several matters, including:
-                    <ul><li>Determining the appropriate testing parameters.</li>
-                    <li>Ensuring adequate safeguards and robust risk management are put in place.</li>
-                    <li>Setting key performance indicators (KPI) to measure success and failure of the test, including planning for potential next steps after the test</li></ul>
-                  </li></ul></p>
+
+          <div class="card" style="flex-wrap: wrap; align-items: center;">
+            <div class="row g-0">
+              <div class="col-md-3">
+                <img src="https://images.moneycontrol.com/static-mcnews/2020/10/TECHNOLOGY-770x433.jpg" class="card-img" alt="card-img" height="100%" style="align-self: center;" >
+              </div>
+              <div class="col-md-9">
+                <div class="card-body">
+                  <h5 class="card-title">Stage 2: Preparation - <i>How should I prepare for testing?</i></h5>
+                  <p class="card-text">                  
+                    <ul class="triangle">
+                      <li>Eligible applicants who are admitted into the Sandbox will work with the Bank to prepare for live-testing. This will involve detailed discussions on several matters, including:
+                        <ul class="triangle-2"><li>Determining the appropriate testing parameters.</li>
+                        <li>Ensuring adequate safeguards and robust risk management are put in place.</li>
+                        <li>Setting key performance indicators (KPI) to measure success and failure of the test, including planning for potential next steps after the test</li></ul>
+                      </li></ul></p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-11 ">
-            <div class="card card-body ">
-              <div class="flex-grow-1">
-                <h5 class="h5"> Stage 3: Live testing- <i>What to expect during testing?</i></h5>
-                <p class="mb-0" style="text-align: left;">
-                  <ul>
-                    <li>Applicants who have successfully completed preparations will be given approval to test the solution in the live market within a period not exceeding 12 months. Where necessary, exemptions from relevant regulations will be granted throughout the testing period.</li>
-                    <li>During the live test period, applicants are expected to provide regular reports on the progress of the test. Applicants should also prepare for their next steps after the end of the test. </li>
-                  </ul></p>
+
+          <div class="card" style="flex-wrap: wrap; align-items: center;">
+            <div class="row g-0">
+              <div class="col-md-3">
+                <img src="https://www.rmit.edu.au/content/dam/rmit/rmit-images/news/2020/aug/new-data-science-and-ai-courses/GEL%20image%20data%20science-1220_x_732.jpg" class="card-img" alt="card-img" height="100%" style="align-self: center;" >
+              </div>
+              <div class="col-md-9">
+                <div class="card-body">
+                  <h5 class="card-title">Stage 3: Live testing- <i>What to expect during testing?</i></h5>
+                  <p class="card-text">                  
+                    <ul class="triangle">
+                      <li>Eligible applicants who are admitted into the Sandbox will work with the Bank to prepare for live-testing. This will involve detailed discussions on several matters, including:
+                        <ul class="triangle-2">
+                          <li>Applicants who have successfully completed preparations will be given approval to test the solution in the live market within a period not exceeding 12 months. Where necessary, exemptions from relevant regulations will be granted throughout the testing period.</li>
+                          <li>During the live test period, applicants are expected to provide regular reports on the progress of the test. Applicants should also prepare for their next steps after the end of the test. </li>
+                        </ul></p>
+                </div>
               </div>
             </div>
           </div>
 
         </div>
       </div>
+      <div class="divider bg-primary-alt py-0">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="96px" viewBox="0 0 100 100" version="1.1" preserveAspectRatio="none" class="injected-svg bg-primary-2" data-src="/o/finmkt/images/dividers/divider-1.svg">
+     <path d="M0,0 C40,33 66,52 75,52 C83,52 92,33 100,0 L100,100 L0,100 L0,0 Z"></path>
+    </svg>
+    
+  </div>
      
      </section>
+
 <!--END OF DESCRIPTION-->
-<section class="bg-primary-2 pt-0 pb-4">
-  
-  <div class="row mx-1 justify-content-center">
-    <div class="col-12 col-md-12 col-lg-8">
-<!-- FAQ LIST - PLS NUMBER THE FAQ IN DATATARGET AND ARIACONTROL AND ID -->
-<br>
-<br>
-<h3 style="text-align: left; color: whitesmoke;">Tips and tricks in applying to the Sandbox</h3><br>
-<p style="color: yellow;">[content from JK]</p>
-  <div class="card mb-2 card-sm card-body hover-shadow-sm aos-init" data-aos="fade-up" data-aos-delay="NaN">
-    <div data-target="#faq-2" class="accordion-panel-title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faq-2">
-      <span class="h6 mb-0" style="text-align: left;">[content from JK]</span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg icon" data-src="/o/finmkt/images/icons/interface/plus.svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<section class="bg-primary-2 pt-2 pb-4">
+
+<!-- TIPS AND TRICKS -->
+<div class="row mx-1">
+<div class="col">
+<h3 class="text-light">Tips and tricks when applying to the Sandbox​</h3>
+    <div class="card mb-2 card-sm card-body hover-shadow-sm aos-init aos-animate" data-aos="fade-up" data-aos-delay="NaN">
+            <div data-target="#faq-5" class="accordion-panel-title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faq-5">
+              <span class="h6 mb-0" style="color: red;">[pending input from JK]</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg icon" data-src="/o/finmkt/images/icons/interface/plus.svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <path d="M19 11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11Z" fill="#212529"></path>
 <path d="M13 19L13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5L11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19Z" fill="#212529"></path>
 </svg>
-    </div>
-    <div class="collapse" id="faq-2" >
-      <div class="pt-3" style="text-align: left;">
-        <p class="mb-0" style="text-align: left;">
-          Prior to sending in an application, please do assess the following criteria.<br></br>
-          <ul>
-            <li>The Bank’s Regulatory Sandbox is intended as an avenue for the Bank to consider granting regulatory flexibilities to facilitate the growth of innovative financial services with genuine value proposition that may otherwise be impeded from doing so due to regulations. As such, it is a necessary condition that regulatory impediments are identified clearly to be eligible for the Bank’s Regulatory Sandbox. Conversely, if a proposed solution is not under the Bank’s regulatory purview or the applicant is able to fully comply with existing regulations, it would be ineligible.<br></br>
-            <li>Applicants are responsible to comprehensively assess the potential legal implications of the services they intend to offer vis-à-vis regulations administered by the Bank or other regulators such as the Securities Commission (“SC”). It is common practice to engage an appropriate legal consultant to conduct such an assessment where an applicant is not well positioned to do so. Additionally, applicants in need of guidance or broad advice concerning legal and compliance matters may also consider engaging MDEC’s Fintech Booster programme.</li>
-            </li>
-            </ul></p>
+            </div>
+            <div class="collapse" id="faq-5">
+              <div class="pt-3">
+                <p class="mb-0">
+                  XX
+                </p>
+              </div>
+            </div>
+          </div>
+
+    <div class="card mb-2 card-sm card-body hover-shadow-sm aos-init aos-animate" data-aos="fade-up" data-aos-delay="NaN">
+            <div data-target="#faq-6" class="accordion-panel-title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faq-6">
+              <span class="h6 mb-0">XX</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg icon" data-src="/o/finmkt/images/icons/interface/plus.svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M19 11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11Z" fill="#212529"></path>
+<path d="M13 19L13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5L11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19Z" fill="#212529"></path>
+</svg>
+            </div>
+            <div class="collapse" id="faq-6">
+              <div class="pt-3">
+                <p class="mb-0">
+                  XX
+                </p>
+              </div>
+            </div>
+          </div>
+
+    <div class="card mb-2 card-sm card-body hover-shadow-sm aos-init aos-animate" data-aos="fade-up" data-aos-delay="NaN">
+            <div data-target="#faq-7" class="accordion-panel-title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faq-7">
+              <span class="h6 mb-0">XX</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg icon" data-src="/o/finmkt/images/icons/interface/plus.svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M19 11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11Z" fill="#212529"></path>
+<path d="M13 19L13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5L11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19Z" fill="#212529"></path>
+</svg>
+            </div>
+            <div class="collapse" id="faq-7">
+              <div class="pt-3">
+                <p class="mb-0">
+                  XX.
+                </p>
+              </div>
+            </div>
+          </div>
+<!-- END FAQ LIST -->        
+    </div> 
+    <div class="row mx-1 col-6">
+      <div class="col">
+      <h3 class="text-light">Misconceptions​</h3>
+          <div class="card mb-2 card-sm card-body hover-shadow-sm aos-init aos-animate" data-aos="fade-up" data-aos-delay="NaN">
+                  <div data-target="#faq-8" class="accordion-panel-title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faq-8">
+                    <span style='color:red;text-decoration:line-through'>
+                      <span style='color:black'><b>BNM takes too long to respond</b></span>
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg icon" data-src="/o/finmkt/images/icons/interface/plus.svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <path d="M19 11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11Z" fill="#212529"></path>
+      <path d="M13 19L13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5L11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19Z" fill="#212529"></path>
+      </svg>
+                  </div>
+                  <div class="collapse" id="faq-8">
+                    <div class="pt-3">
+                      <p class="mb-0">
+                        <ul class="myths">
+                          <li> We help identify whether activity or business models fall under BNM regulations</li>
+                          <li> We adopt an 'informal steer' approach where we guide and advice participants on the modifications that can be made. </li>
+                        </ul></p>
+                    </div>
+                  </div>
+                </div>
+      
+          <div class="card mb-2 card-sm card-body hover-shadow-sm aos-init aos-animate" data-aos="fade-up" data-aos-delay="NaN">
+                  <div data-target="#faq-9" class="accordion-panel-title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faq-9">
+                    <span style='color:red;text-decoration:line-through'>
+                      <span style='color:black'><b>The Sandbox is an avenue to seek BNM's validation</b></span>
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg icon" data-src="/o/finmkt/images/icons/interface/plus.svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <path d="M19 11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11Z" fill="#212529"></path>
+      <path d="M13 19L13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5L11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19Z" fill="#212529"></path>
+      </svg>
+                  </div>
+                  <div class="collapse" id="faq-9">
+                    <div class="pt-3">
+                      <p class="mb-0">
+                        <ul class="myths">
+                          <li> The Sandbox does not preclude licensing eligbility criteria. It may be viewed as a 'learner's permit' but a full license is not necessarily guaranteed.</li>
+                        </ul></p>
+                    </div>
+                  </div>
+                </div>
+      
+          <div class="card mb-2 card-sm card-body hover-shadow-sm aos-init aos-animate" data-aos="fade-up" data-aos-delay="NaN">
+                  <div data-target="#faq-10" class="accordion-panel-title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faq-10">
+                    <span style='color:red;text-decoration:line-through'>
+                      <span style='color:black'><b>BNM is too rigid</b></span>
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg icon" data-src="/o/finmkt/images/icons/interface/plus.svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <path d="M19 11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11Z" fill="#212529"></path>
+      <path d="M13 19L13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5L11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19Z" fill="#212529"></path>
+      </svg>
+                  </div>
+                  <div class="collapse" id="faq-10">
+                    <div class="pt-3">
+                      <p class="mb-0">
+                        <ul class="myths">
+                          <li> Some companies do not have a clear value proposition or its solution is not relevant to the licenses they intend to apply for.</li>
+                          <li> The Sandox is also a learning platform for regulators as we have to cater and tweak our regulations in accordance to the emergence of new business models. </li>
+                        </ul></p>
+                    </div>
+                  </div>
+                </div>
+      <!-- END FAQ LIST -->        
+          </div>  
+
+
+</div>
+</div> 
+</div>
+</section>
+
+<!-- GUIDANCE  -->
+
+<section class="bg-primary-alt py-0">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-2">
+      <div class="col">
+        <h2 class="mx-2 mx-md-1 my-3">Useful Resources</h2>
       </div>
     </div>
   </div>
-          <div class="card mb-2 card-sm card-body hover-shadow-sm aos-init" data-aos="fade-up" data-aos-delay="NaN">
-            <div data-target="#faq-3" class="accordion-panel-title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faq-3">
-              <span class="h6 mb-0" style="text-align: left;">[content from JK]</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg icon" data-src="https://amer6693.github.io/images/icons/interface/plus.svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M19 11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11Z" fill="#212529"></path>
-<path d="M13 19L13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5L11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19Z" fill="#212529"></path>
-</svg>
-            </div>
-            <div class="collapse" id="faq-3">
-              <div class="pt-3" style="text-align: left;">
-                <p class="mb-0">
-                  <ul>
-                    <li>The Bank’s Regulatory Sandbox aims to enable innovative solutions to be deployed and tested in a live environment, within specified parameters and timeframes. As such, an applicant is expected to be minimally at the mid-stage of a start-up’s development phase at the time of application to the Bank’s Regulatory Sandbox. Typically, this would include:</li>          
-                    <ul>
-                      <li>A ready prototype or minimum viable product to demonstrate the proposed solution</li>
-                    <li>Reasonably adequate resources (e.g. financial and staff capacity) to support live testing</li>
-                  <li>Appropriate risk assessments and risk mitigation plans</li>
-                <li>A realistic business plan to commercialise the tested solution after exit from the Sandbox</li><br>
-              </ul>
-              <li>Applicants who are at the early stage of development (i.e. ideation or conceptual stage) in need of guidance may consider to engage our local fintech community (e.g. FAOM) or agencies such as MDEC, and other accredited start-up accelerator programme providers.</li>
-                </p>
-              </div>
-            </div>
+
+  <div class="row mx-1 justify-content-center">
+
+      <div class="col-7 col-lg-4">
+        <div class="card">
+          <img src="https://www.psychologicalscience.org/redesign/wp-content/uploads/2016/01/PAFF_082917_flippingbook-609x419.jpg" width="500" height="200" alt="Image" class="card-img-top">
+      <div class="card-body d-flex flex-column">
+            <h5 class="h5"><a href="https://amer6693.github.io/Guidance.html" style="font-size:25px;"><p style="text-align: center;">Sandbox Application Guidance</p></a></h5>
+            <h8 class ="h8">The Fintech Regulatory Sandbox guidelines sets out the objective and principles of the Sandbox, and provide guidance to potential applicants on the application process, the main evaluation criteria and the information to be furnished to BNM.</h8>
           </div>
-          <div class="card mb-2 card-sm card-body hover-shadow-sm aos-init" data-aos="fade-up" data-aos-delay="NaN">
-            <div data-target="#faq-4" class="accordion-panel-title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faq-4">
-              <span class="h6 mb-0" style="text-align: left;">[content from JK] </span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg icon" data-src="https://amer6693.github.io/images/icons/interface/plus.svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M19 11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11Z" fill="#212529"></path>
-<path d="M13 19L13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5L11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19Z" fill="#212529"></path>
-</svg>
-            </div>
-            <div class="collapse" id="faq-4">
-              <div class="pt-3" style="text-align: left;">
-                <p class="mb-0">
-                  <ul>
-                    <li>Applicants should provide strong evidence to demonstrate a solution’s usefulness, functionality, and potential to improve financial services and satisfy market demand gaps, as stipulated in the Bank’s Regulatory Sandbox Framework and application form. Typically, it would entail a strong market gap assessment or research accompanied with a solid underlying understanding of the relevant market landscape and accurate identification of issues currently in the market.</li>
-                  </ul>
-                </p>
-              </div>
-            </div>
-          </div>
-            <!-- END TIPS SECTION -->        
+        </div>
       </div>
-    </div>
-  </section>
+
+
+      <div class="col-7 col-lg-4">
+        <div class="card">
+          <img src="https://www.praxity.com/media/3645/regulations.jpg" width="500" height="200" alt="Image" class="card-img-top">
+      <div class="card-body d-flex flex-column">
+            <h5 class="h5"><a href="https://amer6693.github.io/Regulations.html" style="font-size:25px;"><p style="text-align: center;">Understanding Regulations</p></a></h5>
+            <h8 class ="h8">Participating fintech companies intending to carry out regulated businesses will be assessed based on applicable licensing, approval and registration criteria under the FSA, IFSA and MSBA, as the case may be.</h8>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-7 col-lg-4">
+        <div class="card">
+          <img src="https://www.richardweechambers.com/wp-content/uploads/2020/08/RWC-e-Flyer_Partner-of-Fintech-Booster_Logo_RWC_Instagram-803x402.jpg" width="500" height="200" alt="Image" class="card-img-top">
+      <div class="card-body d-flex flex-column">
+            <h5 class="h5"><a href="https://fintechbooster.com.my/" style="font-size:25px;"><p style="text-align: center;">Fintech Booster</p></a></h5>
+            <h8 class ="h8">Spearheaded by Bank Negara Malaysia (the Bank) and Malaysia Digital Economy Corporation (MDEC), the quarterly Fintech Booster programme is a toolkit of capacitybuilding resources for companies to develop their fintech solutions to a proof of concept (POC) stage</h8>
+          </div>
+        </div>
+      </div>
+
+
+        
+</section>
 
 <!-- PAGE FOOTER -->	
     
