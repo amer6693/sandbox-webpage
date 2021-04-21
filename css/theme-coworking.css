@@ -108,8 +108,8 @@ dt {
   font-weight: 600; }
 
 dd {
-  margin-bottom: .5rem;
-  margin-left: 0; }
+  margin-bottom: .75rem;
+  }
 
 blockquote {
   margin: 0 0 1rem; }
@@ -303,11 +303,12 @@ template {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   font-family: inherit;
   font-weight: 600;
   line-height: 1.2;
-  color: #212529; }
+  color: #212529;
+  }
 
 h1, .h1 {
   font-size: 2.5rem; }
@@ -7930,7 +7931,8 @@ img.bg-image {
 .card {
   margin-bottom: 1.5rem; }
   .card.card-sm.card-body {
-    padding: 1.5rem; }
+    /* padding: 1.5rem; */
+    }
   .card[class*='bg-primary']:not([class*='hover-bg-primary']) {
     border-color: rgba(0, 0, 0, 0); }
   .card[class*='hover-'] {
@@ -7950,7 +7952,8 @@ img.bg-image {
   margin-top: 1.5rem; }
 
 .card.card-sm + .card-sm {
-  margin-top: 0.75rem; }
+  margin-top: 0.75rem;
+  }
 
 a.card {
   color: #495057;
@@ -8467,7 +8470,8 @@ h5 {
   margin-bottom: 0.75rem; }
 
 h6 {
-  line-height: 1.375rem; }
+  line-height: 1.375rem;
+  }
 
 a {
   font-weight: 600;
@@ -9292,7 +9296,8 @@ img.rounded, div.rounded {
   transition-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75); }
 
 [data-aos][data-aos][data-aos-easing=ease], body[data-aos-easing=ease] [data-aos] {
-  transition-timing-function: ease; }
+  transition-timing-function: ease;
+  }
 
 [data-aos][data-aos][data-aos-easing=ease-in], body[data-aos-easing=ease-in] [data-aos] {
   transition-timing-function: ease-in; }
@@ -9354,7 +9359,8 @@ img.rounded, div.rounded {
 
 [data-aos^=fade][data-aos^=fade].aos-animate {
   opacity: 1;
-  transform: translateZ(0); }
+  transform: translateZ(0);
+  }
 
 [data-aos=fade-up] {
   transform: translate3d(0, 100px, 0); }
@@ -9475,7 +9481,8 @@ img.rounded, div.rounded {
       -ms-user-select: none;
           user-select: none; }
   .accordion-panel-title > .icon {
-    transition: transform 0.1s ease; }
+    transition: transform 0.1s ease;
+    }
   .accordion-panel-title > * {
     transition: color 0.1s ease; }
   .accordion-panel-title .h6 + .icon {
@@ -9724,11 +9731,13 @@ blockquote {
   position: relative; }
   .divider svg {
     background: none !important;
-    height: 6vw; }
+    height: 6vw;
+    }
     .divider svg:not([class*='bg']) path {
       fill: #fff; }
   .divider:not(:first-child) {
-    top: 1px; }
+    /* top: 1px; */
+    }
   .divider:first-child {
     bottom: 1px; }
   .divider.divider-vertical {
@@ -11519,7 +11528,8 @@ https://flickity.metafizzy.co
 .icon {
   flex-shrink: 0;
   width: auto;
-  height: 1.5rem; }
+  height: 1.5rem;
+  }
   .icon.icon-md {
     height: 2.25rem; }
   .icon.icon-lg {
