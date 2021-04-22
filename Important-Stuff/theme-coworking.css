@@ -8320,7 +8320,8 @@ svg.bg-primary * {
   fill: #1B4079; }
 
 svg.bg-primary-alt * {
-  fill: #fff; }
+  fill: #f1f4f7;
+  }
 
 svg.bg-secondary * {
   fill: #6c757d; }
@@ -9729,7 +9730,8 @@ blockquote {
     .divider svg:not([class*='bg']) path {
       fill: #f1f4f7; }
   .divider:not(:first-child) {
-    top: 1px; }
+    /* top: 1px; */
+    }
   .divider:first-child {
     bottom: 1px; }
   .divider.divider-vertical {
