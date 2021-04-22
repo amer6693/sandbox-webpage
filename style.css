@@ -1,109 +1,66 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
-  width: 100vmax;
-  height: 100vmax;
-  margin: 0;
-  padding: 0;
-  background: #e97162;
-  font-family:Helvetica ;
-  overflow: scroll;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    background: #07051a;
 }
 
-#lineCont {
-  width: 100%;
-  height: 20%;
+form{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 5px;
 }
 
-#line {
-  height: 6px;
-  width: 70%;
-  background: #e97162;
-  border-radius: 5px;
-  margin: auto;
-  top: 50%;
-  transform: translateY(-50%);
-  position: relative;
+input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
 }
 
-#span {
-  display: none;
-  width: 100%;
-  margin: auto;
-  margin-top: 25%;
-  text-align: center;
-  color: black;
+.fa{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
 }
 
-.circle {
-  width: 20px;
-  height: 20px;
-  background: #e97162;
-  border-radius: 15px;
-  position: absolute;
-  top: -7px;
-  border: 3px solid white;
-  cursor: pointer;
-}
-.circle:before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  background: white;
-  position: absolute;
-  border-radius: 100%;
-  top: 2px;
-  left: 2px;
-  display: none;
-}
-.circle .popupSpan {
-  width: auto;
-  height: auto;
-  padding: 10px;
-  white-space: nowrap;
-  display: inline-block;
-  color: black;
-  position: absolute;
-  top: 20px;
-  left: -75px;
-  display: none;
-  transition: all 0.3s ease-in-out;
-}
-.circle.hover:before, .circle.active:before {
-  display: block;
-}
-.circle.hover .popupSpan, .circle.active .popupSpan {
-  display: block;
-}
-.circle.active .popupSpan {
-  top: -40px;
+form:hover{
+    width: 200px;
+    cursor: pointer;
 }
 
-#mainCont {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  color: black;
-  font-size: 62px;
-  text-align: center;
-  transition: all 0.5s ease-out;
+form:hover input{
+    display: block;
 }
-#mainCont span {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 30%;
-  transition: all 0.5s ease-out;
-}
-#mainCont span.right {
-  left: 200%;
-}
-#mainCont span.center {
-  left: 0% !important;
-}
-#mainCont span.left {
-  left: -200%;
+
+form:hover .fa{
+    background: #07051a;
+    color: white;
 }
