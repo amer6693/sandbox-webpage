@@ -525,7 +525,8 @@ pre {
 
 .col-4 {
   flex: 0 0 33.33333%;
-  max-width: 33.33333%; }
+  max-width: 33.33333%;
+  }
 
 .col-5 {
   flex: 0 0 41.66667%;
@@ -3352,7 +3353,8 @@ input[type="button"].btn-block {
 
 .card-body {
   flex: 1 1 auto;
-  padding: 2rem; }
+  padding: 2rem;
+  }
 
 .card-title {
   margin-bottom: 2rem; }
@@ -7929,7 +7931,8 @@ img.bg-image {
   z-index: 1020; }
 
 .card {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem;
+  }
   .card.card-sm.card-body {
     padding: 1.5rem; }
   .card[class*='bg-primary']:not([class*='hover-bg-primary']) {
