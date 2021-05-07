@@ -73,7 +73,8 @@ dl {
   border-radius: 25px;
   display: flex;
   justify-content: center;
-  align-items: center;}
+  align-items: center;
+}
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
@@ -167,9 +168,16 @@ dl {
   border-left: 40px solid rgb(178,216,216);
 }
 
+.flat {
+  display: inline-block;
+  width: 20px;
+}
+
+</style>
 
 
-  </style>
+
+
     <meta charset="utf-8">
     <title>Sandbox Guidance</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -180,6 +188,8 @@ dl {
     <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="preload" as="font" href="fonts/Inter-UI-upright.var.woff2" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="fonts/Inter-UI.var.woff2" type="font/woff2" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all" />
+
   </head>
   <!doctype html>
 
@@ -352,17 +362,112 @@ dl {
  </div>       
 
   
-  <div class="row mx-1 justify-content-center">
+  <div class="row mx-1 pt-5 justify-content-center">
     <div class="col-12 col-md-12 col-lg-8">
 <!-- FAQ LIST - PLS NUMBER THE FAQ IN DATATARGET AND ARIACONTROL AND ID -->
-<br>
-<br>
 <h3 style="text-align: left; color: white;">Pre-application - <i>What should i do before applying to the Sandbox?</i></h3><br>
-<p style="text-align: left;color: white;">Applicants who are interested to participate in the Bank’s Regulatory Sandbox are responsible to adequately demonstrate eligibility in
-  accordance with the criteria specified under Section 5 of the Bank’s Regulatory Sandbox Framework. As a simple guidance, an
-  applicant should minimally achieve the following:</p><br>
+<p style="text-align: left; color: white;">Is the Sandbox right for you? Conduct a quick self-assessment on whether the Sandbox is applicable to you​.</p>
+<br>
 
-  <div class="card mb-1 card-sm card-body hover-shadow-sm aos-init" data-aos="fade-up" data-aos-delay="NaN">
+
+  <div class="quiz">
+    <div class="quiz__wrapper" data-quiz-parent>
+      <div class="quiz__card" data-quiz-question-id="1" aria-active="true" tabindex="0">
+        <p class="quiz__question">Is your proposed business model or solution an activity regulated under Bank Negara Malaysia?​</p>
+        
+        <p class="quiz__answers">
+          <button class="quiz__button" data-quiz-answer="0" data-quiz-next="2">YES</button>
+          <button class="quiz__button" data-quiz-answer="1" data-quiz-next="3">NO</button>
+          <a href="Regulations.html" target="_blank"><button class="quiz__button">UNSURE</button></a>
+        </p>
+      </div>
+      
+      
+  
+      <div class="quiz__card" data-quiz-question-id="2" data-quiz-previous-question="0">
+        <p class="quiz__question">Are there regulatory requirements that pose a challenge for your business model? ​</p>
+        
+        <p class="quiz__answers">
+          <button class="quiz__button" data-quiz-answer="0" data-quiz-next="4">YES</button>
+          <button class="quiz__button" data-quiz-answer="1" data-quiz-next="3">NO</button>
+          <a href="Regulations.html" target="_blank"><button class="quiz__button">UNSURE</button></a>
+        </p>
+        
+        <p class="quiz__back">
+          <button class="quiz__button" data-quiz-return>&larr; Previous question</button>
+        </p>
+      </div>
+      
+      
+  
+      <div class="quiz__card" data-quiz-question-id="3" data-quiz-previous-question="0">
+        <p class="quiz__question">The Sandbox is not applicable to you​!</p>
+                
+        <p class="quiz__back">
+          <button class="quiz__button" data-quiz-return>&larr; Previous question</button>
+        </p>
+      </div>
+      
+      
+  
+      <div class="quiz__card" data-quiz-question-id="4" data-quiz-previous-question="0">
+        <p class="quiz__question">Do you have a realistic business plan, a prototype or minimum viable product, as well as sufficient resources to support testing of your product in a live market environment?​</p>
+        
+        <p class="quiz__answers">
+          <button class="quiz__button" data-quiz-answer="0" data-quiz-next="5">OBVIOUSLY DUHHHH</button>
+          <button class="quiz__button" data-quiz-answer="1" data-quiz-next="6">I DON'T THINK SO</button>
+        </p>
+        
+        <p class="quiz__back">
+          <button class="quiz__button" data-quiz-return>&larr; Previous question</button>
+        </p>
+      </div>
+      
+      
+  
+      <div class="quiz__card" data-quiz-question-id="5" data-quiz-previous-question="0">
+        <p class="quiz__question">You may apply to the Sandbox. Please take note of the guidance provided in this page.</p>
+        
+        
+        <p class="quiz__back">
+          <button class="quiz__button" data-quiz-return>&larr; Previous question</button>
+        </p>
+      </div>
+      
+      
+  
+      <div class="quiz__card" data-quiz-question-id="6" data-quiz-previous-question="0" data-quiz-fork="5:10;4:7">
+        <p class="quiz__question">You should make further progress in the commercial and business development of your proposed solution before you apply to the Sandbox​​</p>
+        
+    
+        
+        <p class="quiz__back">
+          <button class="quiz__button" data-quiz-return>&larr; Previous question</button>
+        </p>
+      </div>
+      
+    
+
+  
+      <div class="quiz__card" data-quiz-results data-quiz-previous-question="0">
+        <p>The Sandbox is not applicable to you!</p>
+        
+        <p class="quiz__results" data-quiz-results-display></p>
+        
+        <p>
+          <button class="quiz__button" data-quiz-restart="true">Retake questionnaire</button>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
+<p class="pt-4" style="text-align: left;color: white;">Applicants who are interested to participate in the Bank’s Regulatory Sandbox are responsible to adequately demonstrate eligibility in
+  accordance with the criteria specified under Section 5 of the Bank’s Regulatory Sandbox Framework. As a simple guidance, an
+  applicant should minimally achieve the following:</p>
+
+  <div class="card card-sm card-body hover-shadow-sm aos-init" data-aos="fade-up" data-aos-delay="NaN">
     <div data-target="#faq-1" class="accordion-panel-title" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faq-1">
       <span class="h6 mb-0" style="text-align: left;">1.   Clearly identify whether the proposed product or solution is either wholly or partly incompatible with laws, regulations or standards administered by the Bank</span>
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg icon" data-src="/o/finmkt/images/icons/interface/plus.svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -372,7 +477,7 @@ dl {
     </div>
 
     <div class="collapse" id="faq-1" >
-      <div class="pt-3 pb-0" style="text-align: left;">
+      <div class="pt-3" style="text-align: left;">
         <p class="mb-0">
           <ul class="triangle">
             <li>The Bank’s Regulatory Sandbox is intended as an avenue for the Bank to consider granting regulatory flexibilities to facilitate the growth of innovative financial services with genuine value proposition that may otherwise be impeded from doing so due to regulations. As such, it is a necessary condition that regulatory impediments are identified clearly to be eligible for the Bank’s Regulatory Sandbox. If an applicant is able to fully comply with existing regulations, it is not necessary to participate in the Sandbox.</li><br>
@@ -909,6 +1014,7 @@ dl {
     <script type="text/javascript">
       window.addEventListener("load", function () {    document.querySelector("body").classList.add("loaded");  });
     </script>
+    <script src="./script.js"></script>
 
 
     <!-- Clipboard (copies content from browser into OS clipboard) -->

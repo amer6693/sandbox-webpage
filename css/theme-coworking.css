@@ -40,7 +40,8 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  }
 
 html {
   font-family: sans-serif;
@@ -191,7 +192,8 @@ th {
 
 label {
   display: inline-block;
-  margin-bottom: 0.75rem; }
+  margin-bottom: 0.75rem;
+  }
 
 button {
   border-radius: 0; }
