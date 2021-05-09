@@ -6,7 +6,7 @@
 .quiz__wrapper {
   position: relative;
   display: flex;
-  width: auto;
+  width: 900px;
   min-width: 320px;
   margin: auto;
 }
@@ -42,6 +42,11 @@
 }
 .quiz__button:hover, .quiz__button:focus {
   background-color: #872f47;
+  cursor: pointer;
+  transform: rotate(0deg) scale(1) 
+translateY(-2.5px);
+  transition: .5s all ease;
+  z-index: 200;
 }
 .quiz__button:active {
   box-shadow: 0 0 0 2px #ffead1;
@@ -49,6 +54,10 @@
 }
 .quiz__results {
   display: inline-block;
+}
+.quiz__question {
+  font-size: large;
+  font-weight: bold;
 }
 
 @-webkit-keyframes revealQuizQuestion {
