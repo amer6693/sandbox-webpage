@@ -79,9 +79,7 @@ translateY(-2.5px);
 .quiz__results {
   display: inline-block;
 }
-.quiz__question {
-  font-size: large;
-}
+
 
 @-webkit-keyframes revealQuizQuestion {
   from {
