@@ -55,13 +55,11 @@ translateY(-2.5px);
 }
 .quiz__button2 {
   display: inline-block;
-  margin: 0.25rem;
   font-size: 1rem;
   line-height: 1;
   color: rgb(148, 146, 146);
   font-style: italic ;
   border: 1px solid #fff;
-  border-radius: 0.5rem;
   box-shadow: 0 2px 0 2px #fff;
   float:left;
   background-color: #fff;
